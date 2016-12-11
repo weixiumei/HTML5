@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5语法</title>
+	</head>
+	<body>
+		<form>
+			<input type="checkbox" checked>
+			<mark>nihao</mark>
+			<progress max="100" value="85"><span>85</span>"%"</progress>
+			<time datetime="2013-10-18T09:00">9:00</time>
+			<time datetime="2013-10-20T09:00Z" pubdate>9:00</time>
+			<ruby>漢<rt>han</rt><rp>浏览器不支持注释</rp></ruby>
+			<p>
+				<wbr>软换行：123456789uydssdfghjddhgfdsdty<wbr>cvjhgfdshfdeht43uu
+			</p>
+			
+			<canvas id="myCanvas"></canvas>
+			<menu>
+				<command onclick="alert("123")" label="click">click me</command>
+			</menu>
+			<menu>
+				<command onclick="alert('Hello World')">
+					Click Me!
+				</command>
+			</menu>
+			<details>
+				<summary>MacBook Pro Specification</summary>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</details>
+
+			<form oninput="x.value=parseInt(a.value) + parseInt(b.value)">
+				<input id="myCar" list="cars">
+				<datalist id="cars">
+					<option value="BMW"></option>
+					<option value="Ford"></option>
+				</datalist>
+			</form>
+			<keygen name="security">
+
+			<form oninput="x.value=parseInt(a.value) + parseInt(b.value)">
+				<input type="range" id="a" value="50">
+				<input type="number" id="b" value="50">
+				=<output name="x" for="a b">
+			</form>
+
+			<menu type="toolbar">
+				<li><input type="checkbox">red</li>
+				<li><input type="checkbox">blue</li>
+			</menu>
+			
+			<ol start="50" reversed>
+				<li>Coffee</li>
+				<li>Tea</li>
+				<li>Milk</li>
+			</ol>
+
+			<div>
+				<style type="text/css" scoped>
+					h1{color:red;}
+					p{color:blue;}
+				</style>
+				<h1> this is a head</h1>
+				<p>this is a paragraph</p>
+			</div>
+			<p>这个不是蓝色</p>
+
+			<iframe seamless srcdoc="<h1>hello</h1>" sandbox="" src="http://www.baidu.com"></iframe>
+
+			<script>
+				var canvas = document.getElementById("myCanvas");
+				var ctx = canvas.getContext("2d");
+				ctx.fillstyle = "#FF0000";
+				ctx.fillRect(0, 0, 80, 100);
+			</script>
+	</body>
+</html>

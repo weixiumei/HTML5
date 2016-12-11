@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>pic storage demo</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+			var url =  "a.png";
+			function set(key){
+				var img = document.createElement("img");
+				// var img = new Image();
+				//img.setAttribute('crossOrigin', 'anonymous');
+				// access-control-allow-origin: *;
+				// access-control-allow-credentials: true;
+				//img.crossOrigin = 'Anonymous';
+				//img.setAttribute('crossOrigin', 'anonymous');
+				//img.crossOrigin = "*"
+    			
+				//当图片加载完成时触发回调函数。
+				img.addEventListener("load", function(){
+					var imgCanvas = document.createElement("canvas"),
+					imgContext = imgCanvas.getContext("2d");
+					//确保canvas元素的大小和图片尺寸一致。
+					imgCanvas.width = this.width;
+					imgCanvas.height = this.height;
+
+					//渲染图片到canvas中
+					// imgContext.drawImage(this, 0, 0, this.width, this.height);
+					imgContext.drawImage(this, 0, 0);
+
+					//用data url的形式取出
+					var imgAsDataURL = imgCanvas.toDataURL();
+
+					//保存到本地存储中
+					try{
+						localStorage.setItem(key, imgAsDataURL);
+					}catch(e){
+						console.log("Storage failed:" + e);
+					}
+				},false);
+				img.src = url
+			}
+
+			function get(key){
+				var srcStr = localStorage.getItem(key);
+				var imgObj = document.createElement("img");
+				imgObj.src = srcStr;
+				document.body.appendChild(imgObj);
+			}
+			window.onload = function(){
+			 	set("imageTest");
+			 	get("imageTest");
+			}
+
+		</script>
+	</body>
+</html>
