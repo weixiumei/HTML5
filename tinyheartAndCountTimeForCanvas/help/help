@@ -1,0 +1,71 @@
+阶段一目标：
+1.静止的海葵
+2.海葵产生果实
+3.果实自动漂浮
+4.大鱼吃果实
+
+	1.准备工作：
+	搭建html网页结构
+	绘制背景
+
+	2.绘制海葵：
+	绘制直线的API：
+	beginPath();
+	closePath();
+	strokeStyle;
+	stroke();
+	lineWidth();
+	lineCap;
+	globalAlpha;
+	save(); 定义的属性值只在这之间起作用restore();
+
+	3.绘制果实，黄色果实和蓝色果实
+	使用到的API：
+	drawImage();
+	长大=>成熟
+	游戏规则：保持屏幕上有15个果实
+
+	4.画大鱼，身子，尾巴，眼睛
+	使用到API：
+	translate(x, y);//把原点移到（x, y）方便设置其他位置
+	totate(角度);//旋转画布
+	Math.atan2(y,x);
+	lerpAngle()//观察看看
+
+	5.大鱼吃果实的碰撞检测
+	原理：
+	检测大鱼和果实的距离
+
+	6.绘制小鱼（同大鱼）
+
+阶段二目标：
+1.小鱼动画
+2.小鱼生命值判断
+3.大鱼喂小鱼
+4.大鱼动画
+5.特效
+6.海葵摆动动画
+7.游戏分值计算
+8.漂浮物
+
+1.小鱼动画
+尾巴摆动（序列帧轮播）
+眨眼睛
+身体变白（得不到能量）
+
+2.
+
+
+
+
+canvas:
+
+//arc.html
+Draw an arc //绘制一个弧线
+context.arc(
+		centerx, centery, radius,   //圆心x,y坐标，半径
+		startingAngle, endingAngle, //开始结束弧度(右方向为0pi)
+		anticlockwise = false		//false：顺时针
+)
+
+//倒计时/时钟
